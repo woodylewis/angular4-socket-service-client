@@ -10,6 +10,8 @@ import { DataService } from './data.service';
 import { HttpClientModule } from "@angular/common/http";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ContentTypeHeaderInterceptor } from "./content-type-header.interceptor";
+import { Subscription } from 'rxjs/Subscription';
+import { DisplayService } from './display.service';
 
 const routes: Routes = [
     { path: 'home', component: AppComponent },
@@ -23,7 +25,7 @@ const routes: Routes = [
   imports: [
     BrowserModule, RouterModule.forRoot(routes), FormsModule, HttpClientModule
   ],
-  providers: [ DataService,
+  providers: [ DataService, DisplayService,
     {
         provide: HTTP_INTERCEPTORS,
         useClass: ContentTypeHeaderInterceptor,
