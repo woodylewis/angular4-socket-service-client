@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Model } from './model';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'form-demo',
@@ -9,6 +10,10 @@ import { Model } from './model';
   styleUrls: ['./form.css'] 
 })
 export class FormComponent implements OnInit {
+  constructor(private dataService: DataService) {
+
+  }
+
   public model = new Model(null, 'foo');
   
   ngOnInit() {
@@ -17,6 +22,10 @@ export class FormComponent implements OnInit {
 
   onSubmit(form: any): void {
       console.log('SAVE');
+      this.dataService.postData()
+      .subscribe((data) => {
+        console.log('DATA ', data);
+      });
   }
 
   get diagnostic() { return JSON.stringify(this.model); }
