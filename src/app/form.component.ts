@@ -25,7 +25,6 @@ export class FormComponent implements OnInit {
       .subscribe((data) => {
         console.log('DATA ', data);
         this.displayService.show(data.display);
-        //console.log('this.displayStream ', this.displayStream.next(this.displayString));
       });
   }
 

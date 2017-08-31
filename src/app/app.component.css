@@ -1,0 +1,8 @@
+.appBox {
+    width: 48rem;
+    height: 36 rem;
+    border: 1px blue solid;
+    margin-top: 8rem; 
+    margin-left: 24rem;
+    padding: 8rem;
+}
