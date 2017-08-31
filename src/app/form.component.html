@@ -1,18 +1,16 @@
 <div class="ui raised segment">
-    <h2 class="ui header">Demo Form with Builder</h2>
-
-	<form>
-        <input type="text" id="value1">
-        <button type="submit">Submit</button>
-    </form>        
-    <!--
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="ui form">
-          <div class="field">
-              <label for="skuInput">SKU</label>
-              <input type="text" id="skuInput" placeholder="SKU" [formControl]="myForm.controls['sku']">
-          </div>
-          <button type="submit" class="ui button">Submit</button>
-
-    </form>
--->
+    <div class="field">{{diagnostic}}</div>
+    <h3 class="ui header">Demo Form</h3>
+	<form (ngSubmit)="onSubmit()" #demoForm="ngForm">
+        <div class="form-group">
+            <label for="value1" class="field">Value 1</label>
+            <input type="number" id="value1" class="field" [(ngModel)]="model.value1" name="value1"
+                maxlength="20">
+        </div>
+        <div class="form-group">
+                <label for="value2" class="field">Value 2</label>
+                <input type="text" id="value2" class="field" [(ngModel)]="model.value2" name="value2">
+            </div>
+        <button type="submit" class="field">Submit</button>
+    </form>  
 </div>
