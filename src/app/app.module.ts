@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form.component';
 import { DataService } from './data.service';
 import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ContentTypeHeaderInterceptor } from "./content-type-header.interceptor";
 
 const routes: Routes = [
     { path: 'home', component: AppComponent },
@@ -21,7 +23,12 @@ const routes: Routes = [
   imports: [
     BrowserModule, RouterModule.forRoot(routes), FormsModule, HttpClientModule
   ],
-  providers: [ DataService ],
+  providers: [ DataService,
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: ContentTypeHeaderInterceptor,
+        multi: true
+    }  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

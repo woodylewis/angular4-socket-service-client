@@ -10,9 +10,7 @@ import { DataService } from './data.service';
   styleUrls: ['./form.css'] 
 })
 export class FormComponent implements OnInit {
-  constructor(private dataService: DataService) {
-
-  }
+  constructor(private dataService: DataService) { }
 
   public model = new Model(null, 'foo');
   
@@ -22,7 +20,7 @@ export class FormComponent implements OnInit {
 
   onSubmit(form: any): void {
       console.log('SAVE');
-      this.dataService.postData()
+      this.dataService.postData(this.model)
       .subscribe((data) => {
         console.log('DATA ', data);
       });
