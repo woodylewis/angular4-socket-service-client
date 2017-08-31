@@ -20,7 +20,6 @@ const routes: Routes = [
     BrowserModule, RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

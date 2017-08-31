@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'form',
+  selector: 'form-demo',
   templateUrl: './form.component.html',
   styles: []
 })
