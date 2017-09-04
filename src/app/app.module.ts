@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FormComponent } from './form.component';
 import { DataService } from './data.service';
+import { SocketService } from './socket.service';
 import { HttpClientModule } from "@angular/common/http";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ContentTypeHeaderInterceptor } from "./content-type-header.interceptor";
@@ -26,7 +27,7 @@ const routes: Routes = [
   imports: [
     BrowserModule, RouterModule.forRoot(routes), FormsModule, HttpClientModule
   ],
-  providers: [ DataService, DisplayService, ErrorService,
+  providers: [ DataService, DisplayService, ErrorService, SocketService,
     {
         provide: HTTP_INTERCEPTORS,
         useClass: ContentTypeHeaderInterceptor,

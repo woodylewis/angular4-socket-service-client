@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { FormComponent } from './form.component';
 import { DisplayService } from './display.service';
+import { SocketService } from './socket.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public title: string = '';
   public displaySubscription: Subscription;
 
-  constructor(public display: DisplayService) {}
+  constructor(public display: DisplayService, public socket: SocketService) {}
 
   public ngOnInit(): void {
     this.displaySubscription = this.display.displayStream
