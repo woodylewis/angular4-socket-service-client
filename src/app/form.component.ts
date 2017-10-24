@@ -24,9 +24,10 @@ export class FormComponent implements OnInit {
       this.dataService.postRecord(this.model)
       .subscribe((data) => {
         console.log('DATA ', data);
-        this.displayService.show(data.display);
+        this.displayService.show(data[0].title);
+        //this.displayService.show(data.display);
       });
-  }
+  }/*
   fetchAll(): void {
     this.records = [];
     this.dataService.getList()
@@ -62,6 +63,6 @@ export class FormComponent implements OnInit {
       console.log(data);
     });
   }
-
+*/
   //get diagnostic() { return JSON.stringify(this.model); }
 }

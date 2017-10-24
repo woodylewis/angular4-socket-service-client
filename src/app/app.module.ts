@@ -16,8 +16,8 @@ import { DisplayService } from './display.service';
 import { ErrorService } from './error.service';
 
 const routes: Routes = [
-    { path: 'home', component: AppComponent },
-    { path: 'form', component: FormComponent }
+    { path: '*', component: AppComponent }/*,
+    { path: 'form', component: FormComponent }*/
 ]; 
 
 @NgModule({

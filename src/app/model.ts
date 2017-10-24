@@ -1,6 +1,6 @@
 export class Model {
 
-    constructor(public firstName: string, 
-                public lastName: string,
-                public email: string) { }   
+    constructor(public title: string, 
+                public body: string,
+                public imageUrl: string) { }   
 }

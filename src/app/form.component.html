@@ -4,24 +4,28 @@
     -->
 	<form (ngSubmit)="onSubmit()" #demoForm="ngForm">
         <div class="form-group">
-            <label for="firstName" class="field">First</label>
-            <input type="text" id="firstName" class="field" [(ngModel)]="model.firstName" name="firstName"
+            <label for="title" class="field">Title</label>
+            <input type="text" id="title" class="field" [(ngModel)]="model.title" name="title"
                 maxlength="20">
         </div>
         <div class="form-group">
-            <label for="lastName" class="field">Last</label>
-            <input type="text" id="lastName" class="field" [(ngModel)]="model.lastName" name="lastName">
+            <label for="body" class="field">Body</label>
+            <input type="text" id="body" class="field" [(ngModel)]="model.body" name="body">
         </div>
         <div class="form-group">
-            <label for="email" class="field">Email</label>
-            <input type="text" id="email" class="field" [(ngModel)]="model.email" name="email">
+            <label for="imageUrl" class="field">Image Url</label>
+            <input type="text" id="imageUrl" class="field" [(ngModel)]="model.imageUrl" name="imageUrl">
         </div>
         <button type="submit" class="field">Submit</button>
+        <!--
         <div *ngFor="let r of records">
-            <a (click)="fetchOne(r._id)" href="#">GET&nbsp;{{r._id}}&nbsp;{{r.firstName}}&nbsp;&nbsp;{{r.lastName}}&nbsp;&nbsp;{{r.email}}</a>
-            <a (click)="changeOne(r._id)" href="#">EDIT&nbsp;{{r._id}}&nbsp;{{r.firstName}}&nbsp;&nbsp;{{r.lastName}}&nbsp;&nbsp;{{r.email}}</a>
-            <a (click)="deleteOne(r._id)" href="#">DELETE&nbsp;{{r._id}}&nbsp;{{r.firstName}}&nbsp;&nbsp;{{r.lastName}}&nbsp;&nbsp;{{r.email}}</a>
+            <a (click)="fetchOne(r._id)" href="#">GET&nbsp;{{r._id}}&nbsp;{{r.title}}&nbsp;&nbsp;{{r.body}}&nbsp;&nbsp;{{r.imageUrl}}</a>
+            <a (click)="changeOne(r._id)" href="#">EDIT&nbsp;{{r._id}}&nbsp;{{r.title}}&nbsp;&nbsp;{{r.body}}&nbsp;&nbsp;{{r.imageUrl}}</a>
+            <a (click)="deleteOne(r._id)" href="#">DELETE&nbsp;{{r._id}}&nbsp;{{r.title}}&nbsp;&nbsp;{{r.body}}&nbsp;&nbsp;{{r.imageUrl}}</a>
         </div>
-    </form>  
+        -->
+    </form>
+    <!--  
     <button class="field" (click)="fetchAll()">Get List</button>
+    -->
 </div>
