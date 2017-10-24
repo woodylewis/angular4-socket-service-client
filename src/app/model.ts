@@ -1,4 +1,6 @@
 export class Model {
 
-    constructor(public value1: number, public value2: string) { }   
+    constructor(public firstName: string, 
+                public lastName: string,
+                public email: string) { }   
 }

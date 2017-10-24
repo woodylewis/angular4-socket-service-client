@@ -1,8 +1,12 @@
 .appBox {
-    width: 48rem;
+    width: 64rem;
     height: 36 rem;
     border: 1px blue solid;
-    margin-top: 8rem; 
-    margin-left: 24rem;
+    margin-top: 2rem; 
+    margin-left: 2rem;
     padding: 8rem;
+}
+
+.record {
+    cursor:pointer;
 }

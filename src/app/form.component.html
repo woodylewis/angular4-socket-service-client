@@ -1,15 +1,27 @@
 <div class="ui raised segment">
+    <!--
     <div class="field">{{diagnostic}}</div>
+    -->
 	<form (ngSubmit)="onSubmit()" #demoForm="ngForm">
         <div class="form-group">
-            <label for="value1" class="field">Value 1</label>
-            <input type="number" id="value1" class="field" [(ngModel)]="model.value1" name="value1"
+            <label for="firstName" class="field">First</label>
+            <input type="text" id="firstName" class="field" [(ngModel)]="model.firstName" name="firstName"
                 maxlength="20">
         </div>
         <div class="form-group">
-                <label for="value2" class="field">Value 2</label>
-                <input type="text" id="value2" class="field" [(ngModel)]="model.value2" name="value2">
-            </div>
+            <label for="lastName" class="field">Last</label>
+            <input type="text" id="lastName" class="field" [(ngModel)]="model.lastName" name="lastName">
+        </div>
+        <div class="form-group">
+            <label for="email" class="field">Email</label>
+            <input type="text" id="email" class="field" [(ngModel)]="model.email" name="email">
+        </div>
         <button type="submit" class="field">Submit</button>
+        <div *ngFor="let r of records">
+            <a (click)="fetchOne(r._id)" href="#">GET&nbsp;{{r._id}}&nbsp;{{r.firstName}}&nbsp;&nbsp;{{r.lastName}}&nbsp;&nbsp;{{r.email}}</a>
+            <a (click)="changeOne(r._id)" href="#">EDIT&nbsp;{{r._id}}&nbsp;{{r.firstName}}&nbsp;&nbsp;{{r.lastName}}&nbsp;&nbsp;{{r.email}}</a>
+            <a (click)="deleteOne(r._id)" href="#">DELETE&nbsp;{{r._id}}&nbsp;{{r.firstName}}&nbsp;&nbsp;{{r.lastName}}&nbsp;&nbsp;{{r.email}}</a>
+        </div>
     </form>  
+    <button class="field" (click)="fetchAll()">Get List</button>
 </div>

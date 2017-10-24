@@ -14,7 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public title: string = '';
   public displaySubscription: Subscription;
 
-  constructor(public display: DisplayService, public socket: SocketService) {}
+  constructor(public display: DisplayService) {}
 
   public ngOnInit(): void {
     this.displaySubscription = this.display.displayStream
